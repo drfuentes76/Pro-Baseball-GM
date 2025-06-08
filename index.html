@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Baseball GM Sim</title>
-  <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,29 +15,23 @@
       <button onclick="submitCommand()">Enter</button>
     </div>
     <div id="quick-commands">
-      <button onclick="runCmd('menu')">Menu</button>
-      <button onclick="runCmd('roster')">Roster</button>
-      <button onclick="runCmd('sim')">Sim</button>
-      <button onclick="runCmd('trade')">Trade</button>
-      <button onclick="runCmd('draft')">Draft</button>
-      <button onclick="runCmd('stats')">Stats</button>
-      <button onclick="runCmd('news')">News</button>
+      <button onclick="handleCommand('menu')">Menu</button>
+      <button onclick="handleCommand('roster')">Roster</button>
+      <button onclick="handleCommand('sim')">Sim</button>
+      <button onclick="handleCommand('trade')">Trade</button>
+      <button onclick="handleCommand('draft')">Draft</button>
+      <button onclick="handleCommand('stats')">Stats</button>
+      <button onclick="handleCommand('news')">News</button>
     </div>
   </div>
   <script>
-    let output = document.getElementById("output");
-    let input = document.getElementById("command");
-
     function submitCommand() {
+      const input = document.getElementById("command");
       const cmd = input.value.trim().toLowerCase();
       if (cmd) {
         handleCommand(cmd);
         input.value = "";
       }
-    }
-
-    function runCmd(cmd) {
-      handleCommand(cmd);
     }
   </script>
   <script src="main.js"></script>
