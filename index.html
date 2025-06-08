@@ -7,33 +7,99 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="game-container">
+  <div id="main-menu">
     <h1>Baseball GM Sim</h1>
-    <div id="output"></div>
-    <div id="controls">
-      <input type="text" id="command" placeholder="Type command here..." />
-      <button onclick="submitCommand()">Enter</button>
-    </div>
-    <div id="quick-commands">
-      <button onclick="handleCommand('menu')">Menu</button>
+    <div class="button-grid">
       <button onclick="handleCommand('roster')">Roster</button>
       <button onclick="handleCommand('sim')">Sim</button>
-      <button onclick="handleCommand('trade')">Trade</button>
+      <button onclick="handleCommand('trade')" id="trade-btn">Trade</button>
       <button onclick="handleCommand('draft')">Draft</button>
       <button onclick="handleCommand('stats')">Stats</button>
       <button onclick="handleCommand('news')">News</button>
+      <button onclick="handleCommand('contracts')">Contracts</button>
+      <button onclick="handleCommand('scouting')">Scouting</button>
+      <button onclick="handleCommand('negotiate')">Negotiate</button>
+      <button onclick="handleCommand('check cap')">Check Cap</button>
+      <button onclick="handleCommand('review opt outs')">Review Opt-Outs</button>
+      <button onclick="handleCommand('review bonuses')">Review Bonuses</button>
+      <button onclick="handleCommand('contract office')">Contract Office</button>
+      <button onclick="advanceWeek()">Advance Week</button>
+
+
     </div>
   </div>
-  <script>
-    function submitCommand() {
-      const input = document.getElementById("command");
-      const cmd = input.value.trim().toLowerCase();
-      if (cmd) {
-        handleCommand(cmd);
-        input.value = "";
-      }
-    }
-  </script>
+
+  <div id="roster-page" class="hidden page">
+    <h2>Team Roster</h2>
+    <div id="roster-output"></div>
+    <button onclick="goBack()">Back</button>
+  </div>
+
+  <div id="sim-page" class="hidden page">
+    <h2>Simulation Result</h2>
+    <div id="sim-output"></div>
+    <button onclick="goBack()">Back</button>
+  </div>
+
+  <div id="trade-page" class="hidden page">
+    <h2>Trade</h2>
+    <div id="trade-output"></div>
+    <button onclick="goBack()">Back</button>
+  </div>
+
+  <div id="draft-page" class="hidden page">
+    <h2>Draft</h2>
+    <div id="draft-output"></div>
+    <button onclick="goBack()">Back</button>
+  </div>
+
+  <div id="stats-page" class="hidden page">
+    <h2>Season Stats</h2>
+    <div id="stats-output"></div>
+    <button onclick="goBack()">Back</button>
+  </div>
+
+  <div id="news-page" class="hidden page">
+    <h2>News</h2>
+    <div id="news-output"></div>
+    <button onclick="goBack()">Back</button>
+  </div>
+
   <script src="main.js"></script>
+
+  <div id="contracts-page" class="hidden page">
+    <h2>Contracts</h2>
+    <div id="contracts-output"></div>
+    <button onclick="goBack()">Back</button>
+  </div>
+
+  <div id="scouting-page" class="hidden page">
+    <h2>Scouting Report</h2>
+    <div id="scouting-output"></div>
+    <button onclick="goBack()">Back</button>
+  </div>
+
+
+  <div id="contract-office-page" class="hidden page">
+    <h2>Contract Office</h2>
+
+    <h3>Free Agents</h3>
+    <div id="free-agents-output"></div>
+
+    <h3>Arbitration</h3>
+    <div id="arbitration-output"></div>
+
+    <h3>Offer Contract</h3>
+    <label for="player-select">Player:</label>
+    <select id="player-select"></select><br>
+    <label for="offer-salary">Salary (M):</label>
+    <input type="number" id="offer-salary" step="0.1"><br>
+    <label for="offer-years">Years:</label>
+    <input type="number" id="offer-years"><br>
+    <button onclick="submitContractOffer()">Submit Offer</button>
+    <div id="contract-feedback"></div>
+    <br><button onclick="goBack()">Back</button>
+  </div>
 </body>
+
 </html>
