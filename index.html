@@ -9,10 +9,38 @@
 </head>
 <body>
   <div id="game-container">
-    <h1>Baseball GM Simulator</h1>
+    <h1>Baseball GM Sim</h1>
     <div id="output"></div>
-    <input type="text" id="command" placeholder="Enter command..." />
+    <div id="controls">
+      <input type="text" id="command" placeholder="Type command here..." />
+      <button onclick="submitCommand()">Enter</button>
+    </div>
+    <div id="quick-commands">
+      <button onclick="runCmd('menu')">Menu</button>
+      <button onclick="runCmd('roster')">Roster</button>
+      <button onclick="runCmd('sim')">Sim</button>
+      <button onclick="runCmd('trade')">Trade</button>
+      <button onclick="runCmd('draft')">Draft</button>
+      <button onclick="runCmd('stats')">Stats</button>
+      <button onclick="runCmd('news')">News</button>
+    </div>
   </div>
+  <script>
+    let output = document.getElementById("output");
+    let input = document.getElementById("command");
+
+    function submitCommand() {
+      const cmd = input.value.trim().toLowerCase();
+      if (cmd) {
+        handleCommand(cmd);
+        input.value = "";
+      }
+    }
+
+    function runCmd(cmd) {
+      handleCommand(cmd);
+    }
+  </script>
   <script src="main.js"></script>
 </body>
 </html>
