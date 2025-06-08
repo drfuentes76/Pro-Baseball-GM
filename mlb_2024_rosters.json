@@ -1,0 +1,62 @@
+{
+  "Astros": [
+    {
+      "name": "Jose Altuve",
+      "position": "2B",
+      "ovr": 91,
+      "salary": 29
+    },
+    {
+      "name": "Yordan Alvarez",
+      "position": "LF",
+      "ovr": 93,
+      "salary": 19
+    },
+    {
+      "name": "Framber Valdez",
+      "position": "SP",
+      "ovr": 88,
+      "salary": 17
+    }
+  ],
+  "Yankees": [
+    {
+      "name": "Aaron Judge",
+      "position": "RF",
+      "ovr": 96,
+      "salary": 40
+    },
+    {
+      "name": "Gerrit Cole",
+      "position": "SP",
+      "ovr": 94,
+      "salary": 36
+    },
+    {
+      "name": "Anthony Rizzo",
+      "position": "1B",
+      "ovr": 85,
+      "salary": 20
+    }
+  ],
+  "Dodgers": [
+    {
+      "name": "Mookie Betts",
+      "position": "RF",
+      "ovr": 95,
+      "salary": 35
+    },
+    {
+      "name": "Freddie Freeman",
+      "position": "1B",
+      "ovr": 93,
+      "salary": 27
+    },
+    {
+      "name": "Clayton Kershaw",
+      "position": "SP",
+      "ovr": 90,
+      "salary": 20
+    }
+  ]
+}
